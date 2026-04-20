@@ -1,0 +1,111 @@
+{
+  "personal": {
+    "title": "Systems Engineering Student"
+  },
+  "profile": {
+    "intro": "I'm a Systems Engineering student passionate about software development, DevOps, and building high-impact digital products.",
+    "downloadCV": "Download CV",
+    "viewMore": "Learn more"
+  },
+  "aboutModal": {
+    "title": "About me",
+    "para1": "Hi! I'm {name}. Beyond coding, I enjoy teaching, writing, and exploring new tools that improve developer experience. I'm motivated by building solutions that generate real impact and sharing knowledge with the community.",
+    "para2": "I'm a growth-oriented person with strong analytical and algorithmic problem-solving skills. My experience as a developer has allowed me to play an integral role across frontend, backend, and databases. Tackling challenges in these areas drives me to continuously improve and expand my competencies, contributing versatilely throughout the entire software development cycle.",
+    "projectsLabel": "Completed projects",
+    "experienceLabel": "Years of experience"
+  },
+  "sidebar": {
+    "skillsTitle": "Skills",
+    "languagesTitle": "Languages",
+    "fluent": "Fluent",
+    "languages": [
+      { "name": "Spanish", "percent": 100 },
+      { "name": "English", "percent": 65 }
+    ],
+    "skills": [
+      "Frontend development",
+      "Backend development",
+      "Databases",
+      "Laravel",
+      "Git",
+      "AWS",
+      "CI/CD",
+      "Teamwork",
+      "Problem solving",
+      "Effective communication",
+      "Adaptability",
+      "Continuous learning",
+      "Time management",
+      "Critical thinking"
+    ]
+  },
+  "layout": {
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "sections": {
+    "knowledge": "Knowledge",
+    "education": "Education",
+    "portfolio": "Portfolio"
+  },
+  "portfolio": {
+    "details": "Details",
+    "hide": "Hide",
+    "view": "View",
+    "code": "Code"
+  },
+  "footer": {
+    "madeWith": "Made with",
+    "location": "in Medellín, Colombia",
+    "designedWith": "Designed with",
+    "codeLabel": "code",
+    "creativity": "and creativity"
+  },
+  "knowledge": {
+    "items": [
+      { "title": "Web Development", "description": "React, Next.js, Tailwind, CSS, HTML, JavaScript, TypeScript" },
+      { "title": "Cloud Computing", "description": "AWS, CI/CD" },
+      { "title": "Backend Development", "description": "PHP, Laravel, Java, NodeJS, Python" }
+    ]
+  },
+  "education": {
+    "items": [
+      {
+        "institute": "Universidad de Antioquia",
+        "period": "2019 – Present",
+        "degree": "Systems Engineering",
+        "description": "A career focused on creating robust software and applying algorithms to model, simulate, and analyze large volumes of data. It strengthens work in multidisciplinary teams, the use of quality standards, and the development of technology projects with ethical responsibility and a sustainable vision.",
+        "status": "Student"
+      },
+      {
+        "institute": "SENA",
+        "period": "2015 – 2017",
+        "degree": "Technology in Information Systems Analysis and Development",
+        "description": "24-month technology program focused on information systems analysis and development. Trains students to plan, design, build, test, and adjust applications that systematize or automate organizational processes.",
+        "status": "Completed"
+      },
+      {
+        "institute": "Blendex Language Academy",
+        "period": "2023 – 2024",
+        "degree": "Intermediate English",
+        "description": "Intermediate English course focused on conversation and listening comprehension.",
+        "status": "Completed"
+      },
+      {
+        "institute": "Talento Tech",
+        "period": "2025",
+        "degree": "Cloud Computing",
+        "description": "Core AWS services and cloud best practices.",
+        "status": "Completed"
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      { "title": "TelcoNova", "description": "SaaS system for tracking in-process orders." },
+      { "title": "La Rookola", "description": "Online music project built with React and the Spotify API." },
+      { "title": "Kaggle Challenge", "description": "Prediction model development in Python." },
+      { "title": "Flight System Backend", "description": "Reservation module for a flight system built with Java SpringBoot." }
+    ]
+  }
+}

@@ -10,8 +10,12 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export function LanguageCard({
   languages,
+  title,
+  fluentLabel,
 }: {
   languages: Array<{ name: string; percent: number }>;
+  title: string;
+  fluentLabel: string;
 }) {
   const [isExpanded, setIsExpanded] = useState(true);
   const [activeLanguage, setActiveLanguage] = useState<string | null>(null);
@@ -47,7 +51,7 @@ export function LanguageCard({
           <div className="flex items-center gap-2">
             <Globe className="h-5 w-5 text-fuchsia-400" />
             <Heading level={3} variant="neonPink" className="m-0">
-              Idiomas
+              {title}
             </Heading>
           </div>
           <button
@@ -107,7 +111,7 @@ export function LanguageCard({
                         </Text>
                         {l.percent >= 90 && (
                           <span className="inline-flex px-1.5 py-0.5 text-[10px] font-medium bg-fuchsia-900 text-fuchsia-400 rounded">
-                            Fluido
+                            {fluentLabel}
                           </span>
                         )}
                         {activeLanguage === l.name && (

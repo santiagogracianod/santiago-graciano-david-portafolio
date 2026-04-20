@@ -1,16 +1,41 @@
 "use client";
 
 import type React from "react";
-
-import { knowledge } from "../../lib/data";
-import type { KnowledgeItem } from "../../lib/data"
+import { useTranslations } from "next-intl";
+import { Laptop, Cloud, Server } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { Heading } from "../atoms/heading";
 import { Text } from "../atoms/text";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
+import {
+  motion,
+  useMotionValue,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 
+const KNOWLEDGE_ICONS: LucideIcon[] = [Laptop, Cloud, Server];
+
+type KnowledgeItem = {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+};
+
 export default function KnowledgeSection() {
+  const t = useTranslations();
+  const items = t.raw("knowledge.items") as Array<{
+    title: string;
+    description: string;
+  }>;
+  const sectionTitle = t("sections.knowledge");
+
+  const knowledge: KnowledgeItem[] = items.map((item, i) => ({
+    ...item,
+    icon: KNOWLEDGE_ICONS[i],
+  }));
+
   return (
     <motion.section
       id="conocimientos"
@@ -20,7 +45,7 @@ export default function KnowledgeSection() {
       transition={{ duration: 0.6, delay: 0.2 }}
     >
       <Heading level={2} variant="gradient" className="mb-8 text-center">
-        Conocimientos
+        {sectionTitle}
       </Heading>
 
       <div className="grid gap-8 md:grid-cols-2">
@@ -47,7 +72,6 @@ function KnowledgeCard({
     Array<{ x: number; y: number; size: number; color: string; speed: number }>
   >([]);
 
-  // Valores de movimiento para el efecto 3D
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -60,16 +84,9 @@ function KnowledgeCard({
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     if (!cardRef.current) return;
-
     const rect = cardRef.current.getBoundingClientRect();
-    const centerX = rect.left + rect.width / 2;
-    const centerY = rect.top + rect.height / 2;
-
-    const mouseX = e.clientX - centerX;
-    const mouseY = e.clientY - centerY;
-
-    x.set(mouseX);
-    y.set(mouseY);
+    x.set(e.clientX - rect.left - rect.width / 2);
+    y.set(e.clientY - rect.top - rect.height / 2);
   }
 
   function handleMouseLeave() {
@@ -78,16 +95,12 @@ function KnowledgeCard({
     y.set(0);
   }
 
-  // Efecto hover para iniciar animacion de particulas
   useEffect(() => {
     if (!isHovered) {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
       return;
     }
 
-    // inicializar particulas
     particlesRef.current = Array.from({ length: 20 }).map(() => ({
       x: Math.random() * 300,
       y: Math.random() * 300,
@@ -96,16 +109,13 @@ function KnowledgeCard({
       speed: Math.random() * 1 + 0.5,
     }));
 
-    // loop de animacion
     const animate = () => {
       if (!canvasRef.current || !isHovered) return;
-
       const ctx = canvasRef.current.getContext("2d");
       if (!ctx) return;
 
       ctx.clearRect(0, 0, 300, 300);
 
-      // actializacion de particulas
       particlesRef.current = particlesRef.current
         .map((p) => ({
           ...p,
@@ -115,7 +125,6 @@ function KnowledgeCard({
         }))
         .filter((p) => p.size > 0);
 
-      // Add new particles occasionally
       if (Math.random() < 0.1 && particlesRef.current.length < 30) {
         particlesRef.current.push({
           x: Math.random() * 300,
@@ -126,7 +135,6 @@ function KnowledgeCard({
         });
       }
 
-      // Dibujar particulas
       particlesRef.current.forEach((p) => {
         ctx.fillStyle = p.color;
         ctx.beginPath();
@@ -140,11 +148,9 @@ function KnowledgeCard({
     animate();
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
-  }, [isHovered, index]); 
+  }, [isHovered, index]);
 
   return (
     <motion.div
@@ -155,10 +161,7 @@ function KnowledgeCard({
       <motion.div
         ref={cardRef}
         className="relative h-full"
-        style={{
-          perspective: 2000,
-          transformStyle: "preserve-3d",
-        }}
+        style={{ perspective: 2000, transformStyle: "preserve-3d" }}
         onMouseMove={handleMouseMove}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={handleMouseLeave}
@@ -183,7 +186,7 @@ function KnowledgeCard({
               )}
 
               {(() => {
-                const Icon = knowledge.icon; // <─ componente Lucide
+                const Icon = knowledge.icon;
                 return (
                   <Icon
                     size={48}
@@ -201,7 +204,6 @@ function KnowledgeCard({
                 level={3}
                 variant={isHovered ? "neon" : "default"}
                 className="text-center mb-4 transition-all duration-300"
-               
               >
                 {knowledge.title}
               </Heading>
@@ -209,7 +211,6 @@ function KnowledgeCard({
               <Text
                 size="md"
                 className="text-center leading-relaxed transition-all duration-300"
-               
               >
                 {knowledge.description}
               </Text>

@@ -1,0 +1,111 @@
+{
+  "personal": {
+    "title": "Estudiante de Ingeniería de Sistemas"
+  },
+  "profile": {
+    "intro": "Soy estudiante de Ingeniería de Sistemas apasionado por el desarrollo de software, DevOps y la creación de productos digitales de alto impacto.",
+    "downloadCV": "Descargar CV",
+    "viewMore": "Ver más"
+  },
+  "aboutModal": {
+    "title": "Sobre mí",
+    "para1": "¡Hola! Soy {name}. Además de programar, disfruto enseñar, escribir y explorar nuevas herramientas que mejoren la experiencia de los desarrolladores. Me motiva construir soluciones que generen impacto real y compartir lo aprendido con la comunidad.",
+    "para2": "Soy una persona orientada al crecimiento, con sólidas habilidades de análisis y resolución de problemas algorítmicos. Mi experiencia como desarrollador me ha permitido desempeñar un papel integral en frontend, backend y bases de datos. Afrontar retos en estas áreas me impulsa a mejorar y ampliar continuamente mis competencias, contribuyendo de forma versátil a todo el ciclo de desarrollo de software.",
+    "projectsLabel": "Proyectos completados",
+    "experienceLabel": "Años de experiencia"
+  },
+  "sidebar": {
+    "skillsTitle": "Habilidades",
+    "languagesTitle": "Idiomas",
+    "fluent": "Fluido",
+    "languages": [
+      { "name": "Español", "percent": 100 },
+      { "name": "Inglés", "percent": 65 }
+    ],
+    "skills": [
+      "Programación frontend",
+      "Programación backend",
+      "Bases de datos",
+      "Laravel",
+      "Git",
+      "AWS",
+      "CI/CD",
+      "Trabajo en equipo",
+      "Resolución de problemas",
+      "Comunicación efectiva",
+      "Adaptabilidad",
+      "Aprendizaje continuo",
+      "Gestión del tiempo",
+      "Pensamiento crítico"
+    ]
+  },
+  "layout": {
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú"
+  },
+  "sections": {
+    "knowledge": "Conocimientos",
+    "education": "Educación",
+    "portfolio": "Portafolio"
+  },
+  "portfolio": {
+    "details": "Detalles",
+    "hide": "Ocultar",
+    "view": "Ver",
+    "code": "Código"
+  },
+  "footer": {
+    "madeWith": "Hecho con",
+    "location": "en Medellín, Colombia",
+    "designedWith": "Diseñado con",
+    "codeLabel": "código",
+    "creativity": "y creatividad"
+  },
+  "knowledge": {
+    "items": [
+      { "title": "Desarrollo Web", "description": "React, Next.js, Tailwind, CSS, HTML, JavaScript, TypeScript" },
+      { "title": "Cloud Computing", "description": "AWS, CI/CD" },
+      { "title": "Desarrollo Backend", "description": "PHP, Laravel, Java, NodeJS, Python" }
+    ]
+  },
+  "education": {
+    "items": [
+      {
+        "institute": "Universidad de Antioquia",
+        "period": "2019 – Presente",
+        "degree": "Ingeniería de Sistemas",
+        "description": "Carrera orientada a la creación de software robusto y a la aplicación de algoritmos para modelar, simular y analizar grandes volúmenes de datos. Potencia el trabajo en equipos multidisciplinarios, el uso de estándares de calidad, y el desarrollo de proyectos tecnológicos con responsabilidad ética y visión sostenible.",
+        "status": "Estudiante"
+      },
+      {
+        "institute": "SENA",
+        "period": "2015 – 2017",
+        "degree": "Tecnología en Análisis y Desarrollo de Sistemas de Información",
+        "description": "Formación tecnológica de 24 meses centrada en el análisis y desarrollo de sistemas de información. Capacita para planificar, diseñar, construir, probar y ajustar aplicaciones que sistematicen u automaticen procesos organizacionales.",
+        "status": "Finalizado"
+      },
+      {
+        "institute": "Academia de Idiomas Blendex",
+        "period": "2023 – 2024",
+        "degree": "Inglés Intermedio",
+        "description": "Curso de inglés intermedio con enfoque en conversación y comprensión auditiva.",
+        "status": "Finalizado"
+      },
+      {
+        "institute": "Talento Tech",
+        "period": "2025",
+        "degree": "Computación en la Nube",
+        "description": "Servicios fundamentales de AWS y mejores prácticas cloud.",
+        "status": "Finalizado"
+      }
+    ]
+  },
+  "projects": {
+    "items": [
+      { "title": "TelcoNova", "description": "Sistema SaaS para seguimiento de órdenes en proceso." },
+      { "title": "La Rookola", "description": "Proyecto de música en línea con React y API Spotify." },
+      { "title": "Reto Kaggle", "description": "Desarrollo de modelo para predicciones en Python." },
+      { "title": "Backend sistema de vuelos", "description": "Módulo de reservas para sistema de vuelos con Java SpringBoot." }
+    ]
+  }
+}
