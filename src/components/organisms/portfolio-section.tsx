@@ -1,7 +1,8 @@
 "use client";
 
-import { projects } from "../../lib/data";
-import type { Project } from "../../lib/data"
+import { useTranslations } from "next-intl";
+import { projects as projectsStatic } from "../../lib/data";
+import type { Project } from "../../lib/data";
 import { Heading } from "../atoms/heading";
 import { Text } from "../atoms/text";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,21 +13,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useRef } from "react";
 
 export default function PortfolioSection() {
+  const t = useTranslations();
+  const projectsTranslated = t.raw("projects.items") as Array<{
+    title: string;
+    description: string;
+  }>;
+  const sectionTitle = t("sections.portfolio");
+
+  const projects: Project[] = projectsStatic.map((p, i) => ({
+    ...p,
+    title: projectsTranslated[i]?.title ?? p.title,
+    description: projectsTranslated[i]?.description ?? p.description,
+  }));
+
   const [activeProject, setActiveProject] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const scrollToProject = (index: number) => {
     if (!containerRef.current) return;
-
     const projectElements =
       containerRef.current.querySelectorAll(".project-card");
     if (projectElements[index]) {
       const containerLeft = containerRef.current.getBoundingClientRect().left;
       const projectLeft = projectElements[index].getBoundingClientRect().left;
-      const scrollAmount = projectLeft - containerLeft - 40;
-
       containerRef.current.scrollBy({
-        left: scrollAmount,
+        left: projectLeft - containerLeft - 40,
         behavior: "smooth",
       });
     }
@@ -45,7 +56,7 @@ export default function PortfolioSection() {
           variant="gradient"
           className="mb-4 md:mb-0 mx-auto text-center"
         >
-          Portafolio
+          {sectionTitle}
         </Heading>
 
         <div className="flex gap-2">
@@ -95,6 +106,7 @@ function ProjectCard({
   isActive: boolean;
   setActive: () => void;
 }) {
+  const t = useTranslations("portfolio");
   const [isHovered, setIsHovered] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
@@ -164,7 +176,7 @@ function ProjectCard({
                         ) : (
                           <Eye className="w-4 h-4 mr-2" />
                         )}
-                        {showDetails ? "Ocultar" : "Detalles"}
+                        {showDetails ? t("hide") : t("details")}
                       </Button>
                       <Button
                         size="sm"
@@ -172,7 +184,7 @@ function ProjectCard({
                         onClick={() => window.open(project.url, "_blank")}
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
-                        Ver
+                        {t("view")}
                       </Button>
                     </div>
                   </motion.div>
@@ -216,7 +228,7 @@ function ProjectCard({
                       onClick={() => window.open(project.url, "_blank")}
                     >
                       <Github className="w-4 h-4 mr-2" />
-                      Código
+                      {t("code")}
                     </Button>
 
                     <Text size="xs" variant="muted">

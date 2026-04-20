@@ -1,32 +1,20 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  // Para Next.js 15+, asegurar compatibilidad con React 19
+import createNextIntlPlugin from "next-intl/plugin";
+import type { NextConfig } from "next";
+
+const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
+
+const nextConfig: NextConfig = {
   reactStrictMode: true,
-  
-  // Configuración para imágenes
   images: {
     unoptimized: false,
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: '**',
-      },
+        protocol: "https",
+        hostname: "**",
+      } as import("next/dist/shared/lib/image-config").RemotePattern,
     ],
   },
-
-  // Configuración para Tailwind CSS 4
-  experimental: {
-    // turbo: {}, // Opcional para desarrollo más rápido
-  },
-
-  // Asegurar que funcione con Vercel
-  output: 'standalone', // Solo si necesitas optimización especial
-  
-  // Configuración para archivos estáticos
-  assetPrefix: '',
-  
-  // Para debugging en producción
   productionBrowserSourceMaps: false,
-}
+};
 
-module.exports = nextConfig
+export default withNextIntl(nextConfig);
