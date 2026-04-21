@@ -175,7 +175,7 @@ function KnowledgeCard({
           className="h-full"
         >
           <Card className="border-gray-800 bg-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 h-full overflow-hidden">
-            <CardContent className="p-8 relative">
+            <CardContent className="p-5 sm:p-8 relative">
               {isHovered && (
                 <canvas
                   ref={canvasRef}
