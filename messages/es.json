@@ -104,6 +104,27 @@
       }
     ]
   },
+  "hobbies": {
+    "sectionTitle": "Más allá del código",
+    "items": {
+      "senderismo": {
+        "title": "Senderismo",
+        "description": "Me recarga y me recuerda que los mejores caminos no siempre son los más fáciles. Cada cima es un recordatorio de que la constancia siempre vale la pena."
+      },
+      "baile": {
+        "title": "Baile",
+        "description": "El escenario me enseñó a perder el miedo a equivocarme en público. Bailar me conecta con el presente de una forma que ninguna pantalla puede."
+      },
+      "viajar": {
+        "title": "Viajar",
+        "description": "Cada destino amplía mi forma de ver el mundo y me inspira nuevas ideas. Viajar es el mejor curso de creatividad que existe."
+      },
+      "voluntariado": {
+        "title": "Voluntariado",
+        "description": "Dedicar tiempo a actividades de voluntariado me conecta con otras realidades y me recuerda que siempre hay algo valioso que aportar más allá del trabajo."
+      }
+    }
+  },
   "projects": {
     "items": [
       { "title": "TelcoNova", "description": "Sistema SaaS para seguimiento de órdenes en proceso." },

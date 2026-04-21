@@ -104,6 +104,27 @@
       }
     ]
   },
+  "hobbies": {
+    "sectionTitle": "Beyond the code",
+    "items": {
+      "senderismo": {
+        "title": "Hiking",
+        "description": "It recharges me and reminds me that the best paths aren't always the easiest. Every summit is a reminder that consistency always pays off."
+      },
+      "baile": {
+        "title": "Dance",
+        "description": "The stage taught me to lose the fear of making mistakes in public. Dancing connects me to the present in a way no screen ever could."
+      },
+      "viajar": {
+        "title": "Travel",
+        "description": "Every destination broadens my worldview and inspires new ideas. Traveling is the best creativity course that exists."
+      },
+      "voluntariado": {
+        "title": "Volunteering",
+        "description": "Dedicating time to volunteering connects me with other realities and reminds me there's always something valuable to contribute beyond work."
+      }
+    }
+  },
   "projects": {
     "items": [
       { "title": "TelcoNova", "description": "SaaS system for tracking in-process orders." },

@@ -98,6 +98,22 @@ export interface Project {
   tech?: string[]
 }
 
+export type HobbyMedia = "video" | "image";
+
+export interface Hobby {
+  id: string;
+  media: HobbyMedia;
+  src: string;
+  poster?: string;
+}
+
+export const hobbies: Hobby[] = [
+  { id: "senderismo", media: "video", src: "/video-senderismo.mp4", poster: "/senderismo.jpeg" },
+  { id: "baile",      media: "image", src: "/baile.jpeg" },
+  { id: "viajar",     media: "image", src: "/viajar.jpeg" },
+  { id: "voluntariado", media: "image", src: "/voluntariado.jpeg" },
+];
+
 export const projects: Project[] = [
   {
     id: 1,

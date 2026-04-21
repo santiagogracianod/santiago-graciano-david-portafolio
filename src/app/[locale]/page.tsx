@@ -4,6 +4,7 @@ import ProfileSection from "../../components/organisms/profile-section";
 import KnowledgeSection from "../../components/organisms/knowledge-section";
 import EducationSection from "../../components/organisms/education-section";
 import PortfolioSection from "../../components/organisms/portfolio-section";
+import HobbiesSection from "../../components/organisms/hobbies-section";
 import FooterSection from "../../components/organisms/footer-section";
 
 export default function Page() {
@@ -13,6 +14,7 @@ export default function Page() {
       <KnowledgeSection />
       <EducationSection />
       <PortfolioSection />
+      <HobbiesSection />
       <FooterSection />
     </div>
   );
