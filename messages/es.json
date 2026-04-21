@@ -17,7 +17,11 @@
   "sidebar": {
     "skillsTitle": "Habilidades",
     "languagesTitle": "Idiomas",
+    "contactTitle": "Contacto",
+    "programmingTitle": "Lenguajes de Programación",
     "fluent": "Fluido",
+    "showLess": "Mostrar menos",
+    "showMore": "Mostrar {count} más",
     "languages": [
       { "name": "Español", "percent": 100 },
       { "name": "Inglés", "percent": 65 }
@@ -87,8 +91,8 @@
       {
         "institute": "Academia de Idiomas Blendex",
         "period": "2023 – 2024",
-        "degree": "Inglés Intermedio",
-        "description": "Curso de inglés intermedio con enfoque en conversación y comprensión auditiva.",
+        "degree": "Inglés ",
+        "description": "Curso de inglés con enfoque en conversación y comprensión auditiva.",
         "status": "Finalizado"
       },
       {

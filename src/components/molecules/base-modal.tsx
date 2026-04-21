@@ -35,7 +35,7 @@ export default function BaseModal({ open, onClose, children, className }: BaseMo
             >
               <Dialog.Panel
                 className={cn(
-                  "relative w-full max-w-lg rounded-xl bg-gray-900 border border-cyan-400 p-8 shadow-xl",
+                  "relative w-full max-w-lg rounded-xl bg-gray-900 border border-cyan-400 p-5 sm:p-8 shadow-xl",
                   className
                 )}
               >

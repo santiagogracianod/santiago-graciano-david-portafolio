@@ -112,7 +112,7 @@ function ProjectCard({
 
   return (
     <motion.div
-      className="min-w-[350px] flex-shrink-0 snap-center project-card"
+      className="min-w-[280px] sm:min-w-[340px] flex-shrink-0 snap-center project-card"
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}

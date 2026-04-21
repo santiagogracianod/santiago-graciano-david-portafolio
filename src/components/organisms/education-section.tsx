@@ -13,7 +13,7 @@ export default function EducationSection() {
   return (
     <motion.section
       id="educacion"
-      className="mb-8 bg-gray-900/70 rounded-xl border border-cyan-500/20 max-w-5xl mx-auto px-10"
+      className="mb-8 bg-gray-900/70 rounded-xl border border-cyan-500/20 max-w-5xl mx-auto px-4 sm:px-8"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}

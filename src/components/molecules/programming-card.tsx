@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 import { Heading } from "../atoms/heading";
 import { Text } from "../atoms/text";
 import { ProgressBar } from "../atoms/progress-bar";
@@ -13,6 +14,7 @@ export function ProgrammingCard({
 }: {
   stacks: Array<{ name: string; percent: number }>;
 }) {
+  const t = useTranslations("sidebar");
   const [isExpanded, setIsExpanded] = useState(true);
   const [activeStack, setActiveStack] = useState<string | null>(null);
   const [isInView, setIsInView] = useState(false);
@@ -21,20 +23,12 @@ export function ProgrammingCard({
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-        }
-      },
+      ([entry]) => { if (entry.isIntersecting) setIsInView(true); },
       { threshold: 0.1 }
     );
-
     observer.observe(node);
-    return () => {
-      observer.unobserve(node);
-    };
+    return () => observer.unobserve(node);
   }, []);
 
   return (
@@ -47,7 +41,7 @@ export function ProgrammingCard({
           <div className="flex items-center gap-2">
             <Code2 className="h-5 w-5 text-cyan-400" />
             <Heading level={3} variant="neon" className="m-0">
-              Lenguajes de Programación
+              {t("programmingTitle")}
             </Heading>
           </div>
           <button
@@ -72,16 +66,14 @@ export function ProgrammingCard({
             transition={{ duration: 0.3 }}
           >
             <CardContent className="pt-4">
-              <div className="space-y-6">
+              <div className="space-y-4">
                 {stacks.map((s, index) => (
                   <motion.div
                     key={s.name}
-                    className="space-y-2"
+                    className="space-y-1.5"
                     initial={{ opacity: 0, x: -20 }}
-                    animate={
-                      isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                    }
-                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
                     onMouseEnter={() => setActiveStack(s.name)}
                     onMouseLeave={() => setActiveStack(null)}
                   >

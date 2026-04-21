@@ -38,16 +38,30 @@ export default function ProfileSection() {
   }, []);
 
   return (
-    <section id="perfil" className="py-16">
-      <div className="mx-auto max-w-6xl px-6 relative">
+    <section id="perfil" className="py-6 sm:py-12 lg:py-16">
+      <div className="mx-auto max-w-6xl px-3 sm:px-6 relative">
         <div className="relative rounded-xl bg-gray-900/90 border border-cyan-500/30 shadow-md overflow-hidden">
           <canvas ref={canvasRef} className="absolute inset-0 opacity-20" />
 
-          <div className="relative z-10 grid lg:grid-cols-[1fr_380px] gap-10 p-10">
-            <div className="flex flex-col justify-center space-y-6 order-2 lg:order-1">
+          <div className="relative z-10 grid lg:grid-cols-[1fr_320px] gap-6 sm:gap-10 p-5 sm:p-8 lg:p-10">
+            {/* Portrait — arriba en móvil, derecha en desktop */}
+            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+              <Image
+                src={personal.avatar}
+                alt={personal.name}
+                width={350}
+                height={460}
+                priority
+                className="rounded-lg ring-4 ring-cyan-400 shadow-[0_0_20px_rgba(0,255,255,.4)] object-cover
+                           h-48 w-auto sm:h-64 lg:h-auto lg:w-full lg:max-w-[320px]"
+              />
+            </div>
+
+            {/* Texto */}
+            <div className="flex flex-col justify-center space-y-4 sm:space-y-6 order-2 lg:order-1">
               <Heading
                 level={1}
-                className="text-4xl sm:text-5xl font-bold text-white"
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white"
               >
                 {personal.name}
               </Heading>
@@ -58,8 +72,8 @@ export default function ProfileSection() {
                 {t("intro")}
               </Text>
 
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-6 py-3">
+              <div className="flex flex-wrap gap-3 sm:gap-4 pt-2 sm:pt-4">
+                <Button className="bg-cyan-500 hover:bg-cyan-600 text-black font-semibold px-5 py-2.5 sm:px-6 sm:py-3">
                   <Download className="w-4 h-4 mr-2" /> {t("downloadCV")}
                 </Button>
 
@@ -71,17 +85,6 @@ export default function ProfileSection() {
                   {t("viewMore")}
                 </Button>
               </div>
-            </div>
-
-            <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-              <Image
-                src={personal.avatar}
-                alt={personal.name}
-                width={350}
-                height={460}
-                priority
-                className="rounded-lg ring-4 ring-cyan-400 shadow-[0_0_20px_rgba(0,255,255,.4)] object-cover"
-              />
             </div>
           </div>
         </div>
