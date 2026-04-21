@@ -17,10 +17,14 @@
   "sidebar": {
     "skillsTitle": "Skills",
     "languagesTitle": "Languages",
+    "contactTitle": "Contact",
+    "programmingTitle": "Programming Languages",
     "fluent": "Fluent",
+    "showLess": "Show less",
+    "showMore": "Show {count} more",
     "languages": [
       { "name": "Spanish", "percent": 100 },
-      { "name": "English", "percent": 65 }
+      { "name": "English", "percent": 50 }
     ],
     "skills": [
       "Frontend development",
@@ -87,8 +91,8 @@
       {
         "institute": "Blendex Language Academy",
         "period": "2023 – 2024",
-        "degree": "Intermediate English",
-        "description": "Intermediate English course focused on conversation and listening comprehension.",
+        "degree": "English",
+        "description": "English course focused on conversation and listening comprehension.",
         "status": "Completed"
       },
       {

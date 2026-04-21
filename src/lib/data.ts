@@ -76,8 +76,8 @@ export const education = [
   {
     institute: "Academia de Idiomas Blendex",
     period: "2023 - 2024",
-    degree: "Inglés Intermedio",
-    description: "Curso de inglés intermedio con enfoque en conversación y comprensión auditiva.",
+    degree: "Inglés ",
+    description: "Curso de inglés  con enfoque en conversación y comprensión auditiva.",
     status: "Finalizado",
   },
   {
